@@ -6,6 +6,7 @@
     private $_name;
     private $_to_table;
     private $_to_column;
+    private $_comment;
     private $_data;
    
 
@@ -137,6 +138,26 @@
     public function setData($_data)
     {
         $this->_data = $_data;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of _comment
+     */ 
+    public function getComment()
+    {
+        return $this->_comment;
+    }
+
+    /**
+     * Set the value of _comment
+     *
+     * @return  self
+     */ 
+    public function setComment($_comment)
+    {
+        $this->_comment = $_comment;
 
         return $this;
     }

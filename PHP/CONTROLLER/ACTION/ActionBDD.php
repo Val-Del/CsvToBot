@@ -39,53 +39,6 @@ foreach ($tables as $row) {
 if (isset($_FILES['file_excel']) && $_FILES['file_excel']['error'] == 0) {
 $excelfile = $param->getPathFramework() . '\\' . $_FILES['file_excel']['name'];
 }
-// $columns = [0, 2];
-// function csv_to_data($filename){
-//     $data = [];
-//     $row = 0;
-//     if ($file = fopen($filename, "r")) {
-//         while ($line = fgetcsv($file, 1000, ",")) {
-//             $row++;
-//             if ($row == 1) { // Only process the first row
-//                 $num = count($line);
-//                 for ($c=0; $c < $num; $c++) {
-//                     $data[$c] = $line[$c];
-//                 }
-//                 break; // Exit the loop after processing the first row
-//             }
-//         }
-//         fclose($file);
-//     }
-//     return $data;
-// }
-// function csv_to_data($filename){
-//     $data = [];
-//     if ($file = fopen($filename, "r")) {
-//         while ($line = fgetcsv($file, 1000, ",")) {
-//             $data[] = $line;
-//         }
-//         fclose($file);
-//     }
-//     return $data;
-// }
-
-// function csv_to_data($filename){
-//     $data = [];
-//     if ($file = fopen($filename, "r")) {
-//         $headers = fgetcsv($file, 1000, ",");
-//         $num = count($headers);
-//         while ($line = fgetcsv($file, 1000, ",")) {
-//             $row = [];
-//             for ($c=0; $c < $num; $c++) {
-//                 $row[$headers[$c]] = $line[$c];
-//             }
-//             $data[] = $row;
-//         }
-//         fclose($file);
-//     }
-//     return $data;
-// }
-
 //drop table + create dans la bdd
 $row = new Gen__Excel_row();
 Excel_row_Manager::dropTable($row);
@@ -95,7 +48,7 @@ $data = csv_to_data($excelfile);
 function csv_to_data($filename){
     $data = [];
     if ($file = fopen($filename, "r")) {
-        $headers = fgetcsv($file, 5000, ",");
+        $headers = fgetcsv($file, 5000, ";");
         $data = $headers;
        
         foreach ($headers as $header => $value) {

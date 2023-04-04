@@ -9,7 +9,7 @@
     width: 50%;
     padding-top: 2rem;
     display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
     grid-gap: 10px;
     
     text-align: center;

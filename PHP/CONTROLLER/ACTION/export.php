@@ -55,7 +55,8 @@ foreach ($rows as $key => $value) {
         $array[] = [
             '_name' => $object->getName(),
             '_to_table' => $object->getTo_table(),
-            '_to_column' => $object->getTo_column()
+            '_to_column' => $object->getTo_column(),
+            '_comment' => $object->getComment()
         ];
     }
 

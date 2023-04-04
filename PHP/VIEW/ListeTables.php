@@ -10,7 +10,8 @@ echo '
 <div class="grid-container ">
 <div class="grid-item header-item">Column name</div>
 <div class="grid-item header-item">Table</div>
-<div class="grid-item header-item">Column</div>';
+<div class="grid-item header-item">Column</div>
+<div class="grid-item header-item">Comment</div>';
 $i = 0;
 foreach ($columns as $column) {
      if (substr($column->getName(), 0, 5) != "gen__") {
@@ -56,6 +57,9 @@ echo '<option data-table="none" value="" selected></option>';
           echo '</select>';
           echo '</div>';
 
+          echo'<div class="grid-item">';
+          echo '<input type="textarea" name="row[' . $i . '][_comment]" value="' . $column->getComment() . '" >';
+          echo '</div>';
           $i++;
      }
 }

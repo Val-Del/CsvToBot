@@ -4,6 +4,7 @@ echo '<div class="grid-container">';
 echo '<div class="grid-item header-item">Column Excel</div>';
 echo '<div class="grid-item header-item">To Table</div>';
 echo '<div class="grid-item header-item">To Column</div>';
+echo '<div class="grid-item header-item">Comment</div>';
 foreach ($rows as $row) {
     // var_dump($row);
 
@@ -17,6 +18,10 @@ foreach ($rows as $row) {
 
     echo '<div class="grid-item">';
     echo $row->getTo_column();
+    echo '</div>';
+
+    echo '<div class="grid-item">';
+    echo $row->getComment();
     echo '</div>';
 }
 
